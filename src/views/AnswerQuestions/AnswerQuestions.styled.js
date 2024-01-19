@@ -107,9 +107,8 @@ export const SAnswers = styled.div`
     margin-bottom: 1rem;
   }
 
-  .answers {
-    display: grid;
-    gap: 1rem;
+  .answer {
+    margin-bottom: 1rem;
   }
 
   .actions {
