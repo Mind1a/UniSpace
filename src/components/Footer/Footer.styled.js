@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const SFooter = styled.footer`
-  width: 100%;
   color: #ffffff;
 `;
 
@@ -19,9 +18,9 @@ export const SFooterInfo = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
-  height: 23.8rem;
+  height: 24rem;
   align-items: center;
-  padding: 2.8rem;
+  padding: 3rem 1rem;
 `;
 
 export const SIconPairWrapper = styled.div`
