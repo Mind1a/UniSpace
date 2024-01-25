@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Header } from "../../components/Headers/Header";
 import { Input } from "../../components/Inputs/Input";
 import { Button } from "../../components/Button";
 
@@ -20,7 +19,6 @@ export const RecoveryPassword = () => {
 
   return (
     <SRecoveryPasswordView>
-      <Header />
       <SForm>
         <STitle>პაროლის აღდგენა</STitle>
         <SDescription>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Select from "react-select";
 
-export const SUploadProjectMainDiv = styled.div``;
+export const SUploadProjectMainDiv = styled.main``;
 
 export const SContentWrapper = styled.form`
   display: flex;

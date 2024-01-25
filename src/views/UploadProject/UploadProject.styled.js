@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export const SUploadProjectMainDiv = styled.div`
+export const SUploadProjectMainDiv = styled.main`
   display: flex;
   flex-direction: column;
-`
+`;
 export const SContentWrapper = styled.div`
   margin: 0 auto 29rem auto;
   max-width: 64.438rem;

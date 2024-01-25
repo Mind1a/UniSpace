@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SDirectionsMainDiv = styled.div`
+export const SDirectionsMainDiv = styled.main`
   display: flex;
   flex-direction: column;
 `;

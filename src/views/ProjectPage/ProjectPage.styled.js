@@ -3,7 +3,7 @@ import { SAnotherDirection } from "../../components/Buttons/AnotherDirection/Ano
 import { SCourseTitle } from "../EditCourse/EditCourse.styled";
 import linkSvg from "/assets/svg/linkIcon.svg";
 
-export const SProjectPageMainDiv = styled.div`
+export const SProjectPageMainDiv = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;

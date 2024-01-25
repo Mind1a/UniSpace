@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import plusCircle from "/assets/svg/plusCircle.svg";
 
-export const SEditCourseMainDiv = styled.div`
+export const SEditCourseMainDiv = styled.main`
   display: flex;
   flex-direction: column;
 `;
@@ -39,7 +39,7 @@ export const SButtonContainer = styled.div`
   margin-bottom: 15rem;
 `;
 export const SAddDescButton = styled.button`
-  width: ${({width})=>width};
+  width: ${({ width }) => width};
   border: none;
   height: 2.5rem;
   margin-top: 1.2rem;
@@ -47,6 +47,6 @@ export const SAddDescButton = styled.button`
   background-image: url(${plusCircle});
   background-position: left;
   background-repeat: no-repeat;
-  color: #4980C0;
+  color: #4980c0;
   cursor: pointer;
-`
+`;

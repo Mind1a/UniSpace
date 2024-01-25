@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { ThirdHeader } from "../../components/Headers/ThirdHeader";
 import { ProjectSlider } from "../../components/ProjectSlider";
-import { Footer } from "../../components/Footer";
 import { Button } from "../../components/Button";
 import { motion } from "framer-motion";
 
@@ -31,8 +29,8 @@ export const MainPage = () => {
   const { title, description } = ProjectData[sliderIndex];
   return (
     <SMainDiv>
-      <ThirdHeader />
-      <ProjectSlider onChange={handleSliderChange} data={ProjectData} />
+      {/* TODO! fix project slider */}
+      {/* <ProjectSlider onChange={handleSliderChange} data={ProjectData} /> */}
       <SMainContent initial="hidden" animate="visible">
         <STitle key={"title" + sliderIndex} variants={titleVariants}>
           {title}
@@ -56,9 +54,6 @@ export const MainPage = () => {
           layout
         />
       </SMainPageSvgs>
-      <motion.div layout>
-        <Footer />
-      </motion.div>
     </SMainDiv>
   );
 };
