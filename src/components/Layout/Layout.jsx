@@ -40,8 +40,6 @@ export const Layout = ({ children }) => {
     "/project",
   ];
 
-  console.log(pathname);
-
   return (
     <SContainer>
       <SHeader>
