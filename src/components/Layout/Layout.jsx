@@ -18,31 +18,47 @@ import { Header } from "../Headers/Header";
 export const Layout = ({ children }) => {
   const { pathname } = useLocation();
 
+  const headerMap = {
+    "/": <ThirdHeader />,
+    "/authentication": <Header />,
+    "/recovery-password": <Header />,
+    "/registration": <SecondHeader />,
+    "/privacy-policy": <SecondHeader />,
+  };
+
+  const getHeader = (pathname) => {
+    return headerMap[pathname] || <FourthHeader />;
+  };
+
+  const sidebarPathnames = [
+    "/student-list",
+    "/add-questions",
+    "/answer-questions",
+    "/upload-project",
+    "/upload-project-admin",
+    "/portfolio",
+    "/project",
+  ];
+
+  console.log(pathname);
+
   return (
     <SContainer>
       <SHeader>
-        <div className="header">
-          {pathname === "/" ? (
-            <ThirdHeader />
-          ) : pathname === "/authentication" ||
-            pathname === "/recovery-password" ? (
-            <Header />
-          ) : pathname === "/registration" || pathname === "/privacy-policy" ? (
-            <SecondHeader />
-          ) : (
-            <FourthHeader />
-          )}
-        </div>
-        <div className="line" />
+        <div className="header">{getHeader(pathname)}</div>
+        {pathname !== "/authentication" &&
+          pathname !== "/recovery-password" && <div className="line" />}
       </SHeader>
 
       <SMain>
         <main>{children}</main>
       </SMain>
 
-      <SSideBar>
-        <SideBar />
-      </SSideBar>
+      {sidebarPathnames.includes(pathname) && (
+        <SSideBar>
+          <SideBar />
+        </SSideBar>
+      )}
 
       <SFooter>
         <SFooterLines>

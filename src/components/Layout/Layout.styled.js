@@ -19,7 +19,7 @@ export const SHeader = styled.div`
   }
 
   .line {
-    border-bottom: 2px solid #fff;
+    border-bottom: 1px solid #ebebeb;
   }
 `;
 
