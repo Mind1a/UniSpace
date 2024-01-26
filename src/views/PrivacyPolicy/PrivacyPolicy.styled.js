@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SPrivacyPolicyView = styled.main`
+export const SPrivacyPolicyView = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;

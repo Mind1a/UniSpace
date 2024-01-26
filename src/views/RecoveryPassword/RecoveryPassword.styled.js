@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SRecoveryPasswordView = styled.main`
+export const SRecoveryPasswordView = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;

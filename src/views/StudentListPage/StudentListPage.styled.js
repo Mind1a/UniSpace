@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SStudentListContainer = styled.main`
+export const SStudentListContainer = styled.div`
   padding: 4rem;
   padding-left: 8rem;
 `;

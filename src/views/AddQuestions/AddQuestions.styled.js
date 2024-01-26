@@ -6,7 +6,7 @@ export const SPlusIcon = styled.img`
   height: 1.5rem;
   margin-right: -1rem;
 `;
-export const SAddQuestionsMainDiv = styled.main`
+export const SAddQuestionsMainDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

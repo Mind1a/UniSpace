@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SAboutProjectView = styled.main`
+export const SAboutProjectView = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;

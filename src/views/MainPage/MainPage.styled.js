@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-export const SMainDiv = styled.main`
+export const SMainDiv = styled.div`
   /* position: relative; */
 `;
 

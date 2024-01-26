@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SPage = styled.main`
+export const SPage = styled.div`
   h1 {
     font-size: 30px;
     font-weight: 400;

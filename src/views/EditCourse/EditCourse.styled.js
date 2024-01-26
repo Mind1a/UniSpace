@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import plusCircle from "/assets/svg/plusCircle.svg";
 
-export const SEditCourseMainDiv = styled.main`
+export const SEditCourseMainDiv = styled.div`
   display: flex;
   flex-direction: column;
 `;

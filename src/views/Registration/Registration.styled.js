@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-export const SRegistrationMainDiv = styled(motion.main)`
+export const SRegistrationMainDiv = styled(motion.div)`
   display: flex;
   flex-direction: column;
   position: relative;

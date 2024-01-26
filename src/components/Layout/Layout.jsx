@@ -36,7 +36,9 @@ export const Layout = ({ children }) => {
         <div className="line" />
       </SHeader>
 
-      <SMain>{children}</SMain>
+      <SMain>
+        <main>{children}</main>
+      </SMain>
 
       <SSideBar>
         <SideBar />

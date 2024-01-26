@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SUploadProjectMainDiv = styled.main`
+export const SUploadProjectMainDiv = styled.div`
   display: flex;
   flex-direction: column;
 `;
