@@ -1,5 +1,4 @@
 import React from "react";
-import { FourthHeader } from "../../components/Headers/FourthHeader";
 import { Table } from "../../components/Table";
 import { studentData } from "../../data";
 import {
@@ -10,10 +9,7 @@ import {
 } from "./StudentListPage.styled";
 import { columns } from "./columns";
 import { Input } from "../../components/Inputs/Input";
-import { useState } from "react";
 import { FilterDropdown } from "../../components/FilterDropdown";
-import { useFilters } from "../../hooks/useFilters";
-import { SideBar } from "../../components/SideBar";
 import { SStudentListContainer } from "./StudentListPage.styled";
 import { useForm } from "react-hook-form";
 
@@ -50,7 +46,6 @@ export const StudentListPage = () => {
 
   return (
     <div>
-      <FourthHeader />
       <SStudentListContainer>
         <SContentWrapper>
           <STitle>სტუდენტების სია</STitle>
@@ -79,7 +74,6 @@ export const StudentListPage = () => {
             globalFilter={watch("global_filter")}
             setGlobalFilter={(val) => setValue("global_filter", val)}
           />
-          <SideBar />
         </SContentWrapper>
       </SStudentListContainer>
     </div>

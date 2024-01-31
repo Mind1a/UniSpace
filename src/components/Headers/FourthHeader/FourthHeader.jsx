@@ -34,6 +34,7 @@ export const FourthHeader = () => {
 
   return (
     <SFourthHeader>
+      <div className="placeholder" />
       <SHeaderUnilabLogo to={"/"}>
         <img src="assets/images/unilab.webp" alt="Unilab" />
       </SHeaderUnilabLogo>
@@ -61,10 +62,7 @@ export const FourthHeader = () => {
                       <span>My Account</span>
                     </SMyAccount>
                     <SLogOut>
-                      <SLogOutImg
-                        src="assets/svg/log-out.svg"
-                        alt="log-out"
-                      />
+                      <SLogOutImg src="assets/svg/log-out.svg" alt="log-out" />
                       <span>Log out</span>
                     </SLogOut>
                   </SUserProperty>

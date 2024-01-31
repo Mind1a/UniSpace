@@ -1,5 +1,4 @@
 import React from "react";
-import { SecondHeader } from "../../components/Headers/SecondHeader";
 import { RegistrationForm } from "../../components/RegistrationForm";
 import {
   SRegistrationMainDiv,
@@ -13,7 +12,6 @@ import { RegistrationProvider } from "../../context/RegistrationContext";
 export const Registration = () => {
   return (
     <SRegistrationMainDiv>
-      <SecondHeader />
       <RegistrationProvider>
         <RegistrationForm />
       </RegistrationProvider>

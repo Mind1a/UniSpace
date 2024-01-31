@@ -3,19 +3,19 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 export const SFourthHeader = styled.header`
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-items: center;
-  align-items: center;
-  box-shadow: 0rem 0rem 0.125rem 0.063rem #ecececd4;
-  min-height: 6.25rem;
   color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 6.25rem;
+
+  .placeholder {
+    width: 180px;
+  }
 `;
 
 export const SHeaderUnilabLogo = styled(Link)`
   display: flex;
-  grid-area: auto / 2 / auto / 3;
   img {
     width: 2.5rem;
     height: 3.1rem;
@@ -23,7 +23,6 @@ export const SHeaderUnilabLogo = styled(Link)`
 `;
 
 export const SHeaderProperty = styled.div`
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Header } from "../../components/Headers/Header";
 import { Input } from "../../components/Inputs/Input";
 import { PasswordInput } from "../../components/Inputs/PasswordInput";
 import { Checkbox } from "../../components/Inputs/Checkbox/Checkbox";
@@ -65,7 +64,6 @@ export const Authentication = () => {
 
   return (
     <SAuthenticationView>
-      <Header />
       <SForm onSubmit={handleSubmit(onSubmit)}>
         <STitle>გამარჯობა</STitle>
         <SDescription>
