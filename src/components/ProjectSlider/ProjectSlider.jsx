@@ -49,7 +49,7 @@ export const ProjectSlider = ({ onChange, data, imgHeight }) => {
       <Slider {...settings}>
         {data.map(({ id, src }) => (
           <SProjectCard key={id}>
-            <SProjectImg src={src} alt={"banner" + id} imgHeight={imgHeight}/>
+            <SProjectImg src={src} alt={"banner" + id} imgHeight={imgHeight} />
           </SProjectCard>
         ))}
       </Slider>

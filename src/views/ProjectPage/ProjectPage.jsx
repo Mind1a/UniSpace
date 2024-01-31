@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { FourthHeader } from "../../components/Headers/FourthHeader";
 import {
   SProjectPageMainDiv,
   SInfoDiv,
@@ -14,7 +13,6 @@ import {
   SUsedToolsDiv,
   STitle,
 } from "./ProjectPage.styled";
-import { ProjectSlider } from "../../components/ProjectSlider";
 import { TestProjectData } from "./data/TestData";
 import { ProjectTeamSlider } from "../../components/ProjectTeamSlider/ProjectTeamSlider";
 import { Link } from "react-router-dom";
@@ -37,13 +35,12 @@ export const ProjectPage = () => {
 
   return (
     <SProjectPageMainDiv>
-      <FourthHeader />
       <STitle>საფინალო პროექტი</STitle>
-      <ProjectSlider
+      {/* <ProjectSlider
         onChange={handleSliderChange}
         data={TestProjectData.images}
         imgHeight={"37.5rem"}
-      />
+      /> */}
       <SWrapper>
         <SInfoDiv>
           <SLargeText>

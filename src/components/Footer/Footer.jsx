@@ -3,7 +3,6 @@ import { IconPair } from "../IconPair";
 import {
   SFooter,
   SFooterInfo,
-  SFooterTopLines,
   SIconPairWrapper,
   SAboutProjectDiv,
   SAboutProject,
@@ -14,10 +13,6 @@ import {
 export const Footer = () => {
   return (
     <SFooter>
-      <SFooterTopLines>
-        <img src="/assets/svg/lineLeft.svg" alt="lineLeft" />
-        <img src="/assets/svg/lineRight.svg" alt="lineRight" />
-      </SFooterTopLines>
       <SFooterInfo>
         <SIconPairWrapper>
           <IconPair width="auto" height="3.75rem" size="" gap="1.65rem" />
