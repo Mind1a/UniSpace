@@ -34,15 +34,13 @@ export const ProjectPage = () => {
   const role = findUserObj(user).role;
   const roleDescription = findUserObj(user).roleDescription;
 
-  console.log(TestProjectData.images);
-
   return (
     <SProjectPageMainDiv>
       <STitle>საფინალო პროექტი</STitle>
-      <ProjectSlider
+      {<ProjectSlider
         onChange={handleSliderChange}
         data={TestProjectData.images}
-      />
+      />}
       <SWrapper>
         <SInfoDiv>
           <SLargeText>
