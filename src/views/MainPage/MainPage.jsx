@@ -29,8 +29,7 @@ export const MainPage = () => {
   const { title, description } = ProjectData[sliderIndex];
   return (
     <SMainDiv>
-      {/* TODO! fix project slider */}
-      {/* <ProjectSlider onChange={handleSliderChange} data={ProjectData} /> */}
+      <ProjectSlider onChange={handleSliderChange} data={ProjectData} />
       <SMainContent initial="hidden" animate="visible">
         <STitle key={"title" + sliderIndex} variants={titleVariants}>
           {title}

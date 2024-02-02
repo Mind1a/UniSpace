@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const SContainer = styled.div`
   min-height: 100vh;
   min-height: 100svh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
 `;
 
@@ -26,6 +26,7 @@ export const SHeader = styled.div`
 export const SMain = styled.div`
   width: min(100%, 1200px);
   margin-inline: auto;
+  flex: 1;
 
   > main {
     padding: 1rem;
