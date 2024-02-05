@@ -17,6 +17,7 @@ import { TestProjectData } from "./data/TestData";
 import { ProjectTeamSlider } from "../../components/ProjectTeamSlider/ProjectTeamSlider";
 import { Link } from "react-router-dom";
 import { tools } from "./data/tools";
+import { ProjectSlider } from "../../components/ProjectSlider";
 
 // user = person whose porfolio link was used to load the page
 export const ProjectPage = () => {
@@ -36,11 +37,10 @@ export const ProjectPage = () => {
   return (
     <SProjectPageMainDiv>
       <STitle>საფინალო პროექტი</STitle>
-      {/* <ProjectSlider
+      {<ProjectSlider
         onChange={handleSliderChange}
         data={TestProjectData.images}
-        imgHeight={"37.5rem"}
-      /> */}
+      />}
       <SWrapper>
         <SInfoDiv>
           <SLargeText>
