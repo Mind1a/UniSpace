@@ -14,6 +14,7 @@ import { SideBar } from "../SideBar";
 import { useLocation } from "react-router-dom";
 import { ThirdHeader } from "../Headers/ThirdHeader";
 import { Header } from "../Headers/Header";
+import { Background } from "./backgrouind";
 
 export const Layout = ({ children }) => {
   const { pathname } = useLocation();
@@ -73,6 +74,7 @@ export const Layout = ({ children }) => {
           <Footer />
         </div>
       </SFooter>
+      <Background />
     </SContainer>
   );
 };

@@ -19,9 +19,8 @@ import { Link } from "react-router-dom";
 import { tools } from "./data/tools";
 import { ProjectSlider } from "../../components/ProjectSlider";
 
-// user = person whose porfolio link was used to load the page
 export const ProjectPage = () => {
-  const user = "ნინი წიკლაური"; // temporary string; **receive the user as a prop**
+  const user = "ნინი წიკლაური";
   const [sliderIndex, setSliderIndex] = useState(0);
 
   const handleSliderChange = (i) => {

@@ -15,22 +15,6 @@ export const Registration = () => {
       <RegistrationProvider>
         <RegistrationForm />
       </RegistrationProvider>
-      <SRegistrationSvgs>
-        <SStarLeftTop
-          src="assets/svg/RStarLeftBottom.svg"
-          alt="StarLeftBottom"
-        />
-        <SStarLeftBottom
-          src="assets/svg/RStarLeftTop.svg"
-          alt="StarLeftTop"
-          layout
-        />
-        <SVectorRight
-          src="assets/svg/RVectorRight.svg"
-          alt="VectorRight"
-          layout
-        />
-      </SRegistrationSvgs>
     </SRegistrationMainDiv>
   );
 };
