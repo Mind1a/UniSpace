@@ -36,11 +36,10 @@ export const ProjectPage = () => {
   return (
     <SProjectPageMainDiv>
       <STitle>საფინალო პროექტი</STitle>
-      <ProjectSlider
+      {<ProjectSlider
         onChange={handleSliderChange}
         data={TestProjectData.images}
-        imgHeight={"37.5rem"}
-      />
+      />}
       <SWrapper>
         <SInfoDiv>
           <SLargeText>
