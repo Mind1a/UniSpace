@@ -11,13 +11,11 @@ import {
   SInputForm,
   STitle,
   SButtons,
-  SBackground,
 } from "./Directions.styled";
 import { Dropdown } from "../../components/Inputs/Dropdown";
 import { SingleUploader } from "../../components/Buttons/SingleUploader";
 import { SUploaderContainer } from "../../components/Buttons/SingleUploader/SingleUploader.styled";
 import { Button } from "../../components/Button";
-import { BackgroundStar } from "./BackgroundSvg/BackgroundStar";
 import { SAdditionalResources } from "../../components/Buttons/AdditionalResources/AdditionaResources.styled";
 import { AdditionalResources } from "../../components/Buttons/AdditionalResources";
 import { AnotherDirection } from "../../components/Buttons/AnotherDirection";
@@ -111,10 +109,6 @@ export const Directions = () => {
           დამატება
         </Button>
       </SButtons>
-
-      <SBackground>
-        <BackgroundStar />
-      </SBackground>
     </SDirectionsMainDiv>
   );
 };

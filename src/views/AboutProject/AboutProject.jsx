@@ -4,15 +4,12 @@ import {
   SAboutProject,
   STitle,
   SAboutSection,
-  SAboutSvg,
-  StarMiddleSvg,
 } from "./AboutProject.styled";
 
 export const AboutProject = () => {
   return (
     <SAboutProjectView>
       <SAboutProject>
-        <img src="assets/svg/starTop.svg" alt="" />
         <STitle>პროექტის შესახებ</STitle>
         <SAboutSection>
           <ul>
@@ -53,10 +50,6 @@ export const AboutProject = () => {
         <span>პროექტზე მუშაობდნენ</span>
         {/* <ContributorsSlider /> */}
       </SAboutProject>
-
-      <SAboutSvg>
-        <StarMiddleSvg src="assets/svg/starMiddleRight.svg" alt="starMiddle" />
-      </SAboutSvg>
     </SAboutProjectView>
   );
 };

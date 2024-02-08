@@ -7,7 +7,6 @@ import { Input } from "../../components/Inputs/Input";
 import { Uploader } from "../../components/Uploader/Uploader";
 import {
   SUploadProjectMainDiv,
-  SBackgroundSvg,
   SButtonsWrapper,
   SContentWrapper,
   SInputWrapper,
@@ -17,7 +16,6 @@ import {
 import { Textarea } from "../../components/Inputs/Textarea";
 import { Button } from "../../components/Button";
 import { SLabel } from "../../components/Inputs/Input/Input.styled";
-import backgroundCircleSvg from "/assets/svg/backgroundcircle.svg";
 
 const LinkAndLineComponent = () => {
   return (
@@ -42,7 +40,6 @@ export const UploadProject = () => {
   });
   return (
     <SUploadProjectMainDiv>
-      <SBackgroundSvg src={backgroundCircleSvg} />
       <SContentWrapper>
         <STitle>პროექტის ატვირთვა</STitle>
         <SInputWrapper>

@@ -7,11 +7,7 @@ import {
   SDescription,
   SMainContent,
   SMainDiv,
-  SMainPageSvgs,
-  SStarLeftTop,
-  SStarRight,
   STitle,
-  SVectorBottom,
 } from "./MainPage.styled";
 import { ProjectData } from "../../data";
 import { Link } from "react-router-dom";
@@ -29,8 +25,7 @@ export const MainPage = () => {
   const { title, description } = ProjectData[sliderIndex];
   return (
     <SMainDiv>
-      {/* TODO! fix project slider */}
-      {/* <ProjectSlider onChange={handleSliderChange} data={ProjectData} /> */}
+      <ProjectSlider onChange={handleSliderChange} data={ProjectData} />
       <SMainContent initial="hidden" animate="visible">
         <STitle key={"title" + sliderIndex} variants={titleVariants}>
           {title}
@@ -45,15 +40,6 @@ export const MainPage = () => {
           <Button width="21.25rem">ვრცლად პროექტის შესახებ</Button>
         </MotionLink>
       </SMainContent>
-      <SMainPageSvgs>
-        <SStarLeftTop src="assets/svg/MainPagestar2.svg" alt="StarLeftBottom" />
-        <SStarRight src="assets/svg/MainPagestar1.svg" alt="StarLeftTop" />
-        <SVectorBottom
-          src="assets/svg/MainPageGroup.svg"
-          alt="VectorRight"
-          layout
-        />
-      </SMainPageSvgs>
     </SMainDiv>
   );
 };

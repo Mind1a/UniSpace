@@ -14,10 +14,6 @@ import {
   SRememberWrapper,
   SError,
   STitle,
-  SAuthenticationSvgs,
-  SVectorSvg,
-  StarTopSvg,
-  StarBottomSvg,
 } from "./Authentication.styled";
 import { useForm } from "react-hook-form";
 import axios from "axios";
@@ -111,11 +107,6 @@ export const Authentication = () => {
           </SRegistrationLink>
         </SRegistrationText>
       </SForm>
-      <SAuthenticationSvgs>
-        <SVectorSvg src="assets/svg/vector.svg" alt="vector" />
-        <StarTopSvg src="assets/svg/starTop.svg" alt="starTop" />
-        <StarBottomSvg src="assets/svg/starBottom.svg" alt="starTop" />
-      </SAuthenticationSvgs>
     </SAuthenticationView>
   );
 };
