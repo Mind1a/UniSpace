@@ -34,19 +34,63 @@ export const RegistrationForm = () => {
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
+    setServerErrors(null);
+
+    const mockData = {
+      name: "giorgi",
+      lastname: "merebashvili",
+      email: "giorgdi@gmail.com",
+      number: "555455155",
+      personal_id: "01410401923",
+      date: "2013-02-02T24",
+      gender: "Male",
+      password: "mereba",
+      conf_password: "mereba",
+      country_id: 1,
+      region_id: 1,
+      city_id: 1,
+      address: "დიდი დიღომი პეტრიწის 16ა",
+      school: "null",
+      grade: "null",
+      parent_name: "null",
+      parent_lastname: "null",
+      parent_number: "null",
+      university_id: 1,
+      faculty: "ზუსტ და საბუნებისმეტყველო მეცნიერებათა ფაკულტეტი",
+      program: "მათემატიკა",
+      semester: 6,
+      degree_level: "ბაკალავრი",
+      role_id: 2,
+      terms: 1,
+    };
+
+    data.role_id = 2;
+    data.school = null;
+    data.grade = null;
+    data.parent_name = null;
+    data.parent_lastname = null;
+    data.parent_number = null;
+    data.university_id = 1;
+    data.faculty = "ზუსტ და საბუნებისმეტყველო მეცნიებათა ფაკულტეტი";
+    data.program = "მათემატიკა";
+    data.semester = 6;
+    data.degree_level = "ბაკალავრი";
     try {
-      const res = await axios.post(URL, {
+      const res = await axios.post(URL, data, {
         headers: {
           "Content-Type": "application/json",
         },
-
-        data,
       });
       console.log(res);
-      navigate("/authentication");
     } catch (error) {
-      setServerErrors(error.response.data.message);
-      console.log(serverErrors);
+      if (typeof error.response.data === "string") {
+        setServerErrors(error.response.data);
+        console.log(error.response.data);
+      } else {
+        let keys = Object.keys(error.response.data.message);
+        setServerErrors(error.response.data.message[keys[0]]);
+        console.log(error.response.data.message[keys[0]]);
+      }
     }
   };
 
@@ -77,10 +121,14 @@ export const RegistrationForm = () => {
           </SPrivacyLink>
         </SPrivacyCheckbox>
         {errors?.terms && <SError>{errors.terms?.message}</SError>}
-        {serverErrors && <SError>{serverErrors}</SError>}
+        {serverErrors && typeof serverErrors === "string" && (
+          <SError>{serverErrors}</SError>
+        )}
+
         <Button width="21.25rem" margin="0 0 2.5rem 0" type="submit">
           რეგისტრაცია
         </Button>
+
         <SAuthenticationText>
           უკვე გაქვს ანგარიში?
           <SAuthenticationLink to="/authentication">
