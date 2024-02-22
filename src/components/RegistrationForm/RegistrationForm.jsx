@@ -19,6 +19,8 @@ import {
 } from "./RegistrationForm.styled";
 import { useNavigate } from "react-router-dom";
 
+const URL = `https://unispaceapi.onrender.com/api/registration`;
+
 export const RegistrationForm = () => {
   const {
     register,
@@ -31,37 +33,21 @@ export const RegistrationForm = () => {
 
   const navigate = useNavigate();
 
-  const onSubmit = (data) => {
-    // temp school data
-    data.school = "temp";
-    data.grade = "temp";
-    data.parent_name = "temp";
-    data.parent_lastname = "temp";
-    data.parent_number = "temp";
-
-    // temp university data
-    data.university_id = 1;
-    data.faculty = "temp";
-    data.program = "temp";
-    data.semester = "temp";
-    data.degree_level = "temp";
-
-    axios
-      .post("http://127.0.0.1:5000/Registration", data, {
+  const onSubmit = async (data) => {
+    try {
+      const res = await axios.post(URL, {
         headers: {
           "Content-Type": "application/json",
         },
-      })
-      .then((res) => {
-        if (res.statusText !== "OK") return;
-        navigate("/");
-      })
-      .catch((err) => {
-        if (!err.response.data) return console.log(err);
 
-        console.log(err.response.data);
-        setServerErrors(err.response.data);
+        data,
       });
+      console.log(res);
+      navigate("/authentication");
+    } catch (error) {
+      setServerErrors(error.response.data.message);
+      console.log(serverErrors);
+    }
   };
 
   return (
