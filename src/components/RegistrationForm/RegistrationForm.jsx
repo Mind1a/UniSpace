@@ -36,52 +36,28 @@ export const RegistrationForm = () => {
   const onSubmit = async (data) => {
     setServerErrors(null);
 
-    const mockData = {
-      name: "giorgi",
-      lastname: "merebashvili",
-      email: "giorgdi@gmail.com",
-      number: "555455155",
-      personal_id: "01410401923",
-      date: "2013-02-02T24",
-      gender: "Male",
-      password: "mereba",
-      conf_password: "mereba",
-      country_id: 1,
-      region_id: 1,
-      city_id: 1,
-      address: "დიდი დიღომი პეტრიწის 16ა",
-      school: "null",
-      grade: "null",
-      parent_name: "null",
-      parent_lastname: "null",
-      parent_number: "null",
-      university_id: 1,
-      faculty: "ზუსტ და საბუნებისმეტყველო მეცნიერებათა ფაკულტეტი",
-      program: "მათემატიკა",
-      semester: 6,
-      degree_level: "ბაკალავრი",
-      role_id: 2,
-      terms: 1,
-    };
+    // add default values to be able to register
+    data.role_id = data?.role ?? 2;
+    data.school = data?.school ?? null;
+    data.grade = data?.grade ?? null;
+    data.parent_name = data?.parent_name ?? null;
+    data.parent_lastname = data.parent_lastname ?? null;
+    data.parent_number = data?.parent_number ?? null;
+    data.university_id = data?.university_id ?? 1;
+    data.faculty =
+      data?.faculty ?? "ზუსტ და საბუნებისმეტყველო მეცნიებათა ფაკულტეტი";
+    data.program = data?.program ?? "მათემატიკა";
+    data.semester = data?.semester ?? 6;
+    data.degree_level = data?.degree_level ?? "ბაკალავრი";
 
-    data.role_id = 2;
-    data.school = null;
-    data.grade = null;
-    data.parent_name = null;
-    data.parent_lastname = null;
-    data.parent_number = null;
-    data.university_id = 1;
-    data.faculty = "ზუსტ და საბუნებისმეტყველო მეცნიებათა ფაკულტეტი";
-    data.program = "მათემატიკა";
-    data.semester = 6;
-    data.degree_level = "ბაკალავრი";
     try {
-      const res = await axios.post(URL, data, {
+      await axios.post(URL, data, {
         headers: {
           "Content-Type": "application/json",
         },
       });
-      console.log(res);
+      navigate("/authentication");
+      // TODO: show success message
     } catch (error) {
       if (typeof error.response.data === "string") {
         setServerErrors(error.response.data);
