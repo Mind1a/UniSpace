@@ -35,20 +35,41 @@ export const RegistrationForm = () => {
 
   const onSubmit = async (data) => {
     setServerErrors(null);
+    console.log(data);
 
-    // add default values to be able to register
-    data.role_id = data?.role ?? 2;
-    data.school = data?.school ?? null;
-    data.grade = data?.grade ?? null;
-    data.parent_name = data?.parent_name ?? null;
-    data.parent_lastname = data.parent_lastname ?? null;
-    data.parent_number = data?.parent_number ?? null;
-    data.university_id = data?.university_id ?? 1;
-    data.faculty =
-      data?.faculty ?? "ზუსტ და საბუნებისმეტყველო მეცნიებათა ფაკულტეტი";
-    data.program = data?.program ?? "მათემატიკა";
-    data.semester = data?.semester ?? 6;
-    data.degree_level = data?.degree_level ?? "ბაკალავრი";
+    const defaultPupil = {
+      school: null,
+      grade: null,
+      parent_name: null,
+      parent_lastname: null,
+      parent_number: null,
+    }
+
+    const defaultStudent = {
+      university_id: 1,
+      faculty: null,
+      program: null,
+      semester: null,
+      degree_level: null,
+    }
+
+    let defaultData = {}
+
+    data.role_id = +data.role_id;
+    console.log(data.role_id);
+
+    if(data.role_id !== 1){
+      defaultData = {...defaultData, ...defaultPupil}
+    }
+
+    if(data.role_id !== 2){
+      console.log("here");
+      defaultData = {...defaultData, ...defaultStudent}
+    }
+
+    data = { ...data, ...defaultData};
+    console.log(defaultData);
+    console.log(data);
 
     try {
       await axios.post(URL, data, {
