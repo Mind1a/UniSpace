@@ -18,7 +18,7 @@ export const SchoolInputGroup = () => {
     formState: { errors },
   } = useFormContext();
 
-  if (watch("role") != 1) return;
+  if (watch("role_id") != 1) return;
 
   return (
     <SAdditionalInfoSchool

@@ -16,7 +16,7 @@ export const MainInputGroup = () => {
     control,
     watch,
     formState: { errors },
-  } = useFormContext();
+  } = useFormContext({});
 
   return (
     <SContainer>
@@ -95,6 +95,7 @@ export const MainInputGroup = () => {
           label="სქესი"
           width="10rem"
           placeholder="-"
+          isTextValue
           items={{
             1: "მამრობითი",
             2: "მდედრობითი",
@@ -153,7 +154,7 @@ export const MainInputGroup = () => {
           errors={errors}
         />
         <Dropdown
-          name="role"
+          name="role_id"
           label="სტატუსი"
           width="18.75rem"
           gridArea="auto / 1 / auto / 4"

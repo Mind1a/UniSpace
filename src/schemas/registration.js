@@ -45,26 +45,26 @@ const schoolSchema = baseSchema.extend({
   parent_number: requiredStr("მშობლის მობილურის ნომერი აუცილებელია")
     .regex(/^[\d ]+$/, { message: "არასწორი ნომერი" })
     .transform(spaceRemover),
-  role: z.literal("1"),
+  role_id: z.literal("1"),
 });
 
 const universitySchema = baseSchema.extend({
-  university: requiredStr("აირჩიეთ უნივერსიტეტი"),
+  university_id: requiredStr("აირჩიეთ უნივერსიტეტი"),
   faculty: requiredStr("ფაკულტეტი აუცილებელია"),
   program: requiredStr("პროგრამა აუცილებელია"),
-  degree: z.enum(["bachelors", "masters"], {
+  degree_level: z.enum(["bachelors", "masters"], {
     invalid_type_error: "აირჩიეთ ან ბაკალავრი ან მაგისტრატურა",
   }),
   semester: requiredStr("აირჩიეთ სემესტრი"),
-  role: z.literal("2"),
+  role_id: z.literal("2"),
 });
 
 const otherSchema = baseSchema.extend({
-  role: z.enum(["3", "4", undefined], { required_error: "აირჩიეთ სტატუსი" }),
+  role_id: z.enum(["3", "4", undefined], { required_error: "აირჩიეთ სტატუსი" }),
 });
 
 export const registrationSchema = z
-  .discriminatedUnion("role", [schoolSchema, universitySchema, otherSchema])
+  .discriminatedUnion("role_id", [schoolSchema, universitySchema, otherSchema])
   .refine(({ password, conf_password }) => password === conf_password, {
     message: "პაროლები არ ემთხვევა",
     path: ["conf_password"],
