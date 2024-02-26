@@ -17,7 +17,7 @@ import {
 } from "./Authentication.styled";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { authenticationSchema } from "../../schemas/authentication";
 import Cookies from "js-cookie";
@@ -42,7 +42,6 @@ export const Authentication = () => {
   const navigate = useNavigate();
 
   const onSubmit = async () => {
-
     try {
       const res = await axios.post(url, getValues(), {
         headers: {
