@@ -1,6 +1,4 @@
 import React from "react";
-import { Footer } from "../../components/Footer";
-import { SecondHeader } from "../../components/Headers/SecondHeader";
 import {
   SPrivacyPolicyView,
   SPrivacyPolicy,
@@ -14,7 +12,6 @@ import { Link } from "react-router-dom";
 export const PrivacyPolicy = () => {
   return (
     <SPrivacyPolicyView>
-      <SecondHeader />
       <SPrivacyPolicy>
         <STitle>გამარჯობა</STitle>
         <SPreRegistrationSection>
@@ -69,7 +66,6 @@ export const PrivacyPolicy = () => {
           <Button width="21.25rem">გავეცანი</Button>
         </Link>
       </SPrivacyPolicy>
-      <Footer />
     </SPrivacyPolicyView>
   );
 };

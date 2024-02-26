@@ -22,7 +22,7 @@ export const UniversityInputGroup = () => {
     formState: { errors },
   } = useFormContext();
 
-  if (watch("role") != 2) return;
+  if (watch("role_id") != 2) return;
 
   return (
     <SAdditionalInfoUniversity
@@ -36,7 +36,7 @@ export const UniversityInputGroup = () => {
       <SAdditionalInfoUniversityContainer>
         <SAdditionalInfoUniversityGrid>
           <Dropdown
-            name="university"
+            name="university_id"
             label="უნივერისტეტის დასახელება"
             width="18.75rem"
             placeholder="აირჩიე უნივერსიტეტი"
@@ -73,14 +73,14 @@ export const UniversityInputGroup = () => {
               <RadioInput
                 label="ბაკალავრი"
                 value="bachelors"
-                name="degree"
+                name="degree_level"
                 register={register}
                 watch={watch}
               />
               <RadioInput
                 label="მაგისტრატურა"
                 value="masters"
-                name="degree"
+                name="degree_level"
                 register={register}
                 watch={watch}
               />
@@ -91,7 +91,7 @@ export const UniversityInputGroup = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.2 }}
               >
-                {errors.degree?.message}
+                {errors.degree_level?.message}
               </SError>
             )}
           </SDegreeWrapper>

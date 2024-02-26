@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { Header } from "../../components/Headers/Header";
 import { Input } from "../../components/Inputs/Input";
 import { Button } from "../../components/Button";
 
@@ -9,9 +7,6 @@ import {
   SForm,
   SMarginTop,
   STitle,
-  SAuthenticationSvgs,
-  SVektorRecoveryRight,
-  SStarRecoveryBottom,
 } from "./RecoveryPassword.styled";
 import { useForm } from "react-hook-form";
 
@@ -20,7 +15,6 @@ export const RecoveryPassword = () => {
 
   return (
     <SRecoveryPasswordView>
-      <Header />
       <SForm>
         <STitle>პაროლის აღდგენა</STitle>
         <SDescription>
@@ -40,16 +34,6 @@ export const RecoveryPassword = () => {
           გაგზავნა
         </Button>
       </SForm>
-      <SAuthenticationSvgs>
-        <SVektorRecoveryRight
-          src="/assets/svg/vektorRecoveryRight.svg"
-          alt="vector"
-        />
-        <SStarRecoveryBottom
-          src="/assets/svg/StarRecoveryBottom.svg"
-          alt="starTop"
-        />
-      </SAuthenticationSvgs>
     </SRecoveryPasswordView>
   );
 };

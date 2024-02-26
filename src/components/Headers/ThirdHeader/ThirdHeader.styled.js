@@ -6,9 +6,7 @@ export const SThirdHeader = styled.header`
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
   align-items: center;
-  padding: 0 4.5rem;
   min-height: 10.5rem;
-  box-shadow: 0rem 0rem 0.125rem 0.063rem #ecececd4;
 `;
 export const SIconPairPart = styled.div`
   width: 100%;

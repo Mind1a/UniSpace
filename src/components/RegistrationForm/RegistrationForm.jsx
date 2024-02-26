@@ -19,6 +19,8 @@ import {
 } from "./RegistrationForm.styled";
 import { useNavigate } from "react-router-dom";
 
+const URL = `https://unispaceapi.onrender.com/api/registration`;
+
 export const RegistrationForm = () => {
   const {
     register,
@@ -31,37 +33,62 @@ export const RegistrationForm = () => {
 
   const navigate = useNavigate();
 
-  const onSubmit = (data) => {
-    // temp school data
-    data.school = "temp";
-    data.grade = "temp";
-    data.parent_name = "temp";
-    data.parent_lastname = "temp";
-    data.parent_number = "temp";
+  const onSubmit = async (data) => {
+    setServerErrors(null);
+    console.log(data);
 
-    // temp university data
-    data.university_id = 1;
-    data.faculty = "temp";
-    data.program = "temp";
-    data.semester = "temp";
-    data.degree_level = "temp";
+    const defaultPupil = {
+      school: null,
+      grade: null,
+      parent_name: null,
+      parent_lastname: null,
+      parent_number: null,
+    }
 
-    axios
-      .post("http://127.0.0.1:5000/Registration", data, {
+    const defaultStudent = {
+      university_id: 1,
+      faculty: null,
+      program: null,
+      semester: null,
+      degree_level: null,
+    }
+
+    let defaultData = {}
+
+    data.role_id = +data.role_id;
+    console.log(data.role_id);
+
+    if(data.role_id !== 1){
+      defaultData = {...defaultData, ...defaultPupil}
+    }
+
+    if(data.role_id !== 2){
+      console.log("here");
+      defaultData = {...defaultData, ...defaultStudent}
+    }
+
+    data = { ...data, ...defaultData};
+    console.log(defaultData);
+    console.log(data);
+
+    try {
+      await axios.post(URL, data, {
         headers: {
           "Content-Type": "application/json",
         },
-      })
-      .then((res) => {
-        if (res.statusText !== "OK") return;
-        navigate("/");
-      })
-      .catch((err) => {
-        if (!err.response.data) return console.log(err);
-
-        console.log(err.response.data);
-        setServerErrors(err.response.data);
       });
+      navigate("/authentication");
+      // TODO: show success message
+    } catch (error) {
+      if (typeof error.response.data === "string") {
+        setServerErrors(error.response.data);
+        console.log(error.response.data);
+      } else {
+        let keys = Object.keys(error.response.data.message);
+        setServerErrors(error.response.data.message[keys[0]]);
+        console.log(error.response.data.message[keys[0]]);
+      }
+    }
   };
 
   return (
@@ -91,10 +118,14 @@ export const RegistrationForm = () => {
           </SPrivacyLink>
         </SPrivacyCheckbox>
         {errors?.terms && <SError>{errors.terms?.message}</SError>}
-        {serverErrors && <SError>{serverErrors}</SError>}
+        {serverErrors && typeof serverErrors === "string" && (
+          <SError>{serverErrors}</SError>
+        )}
+
         <Button width="21.25rem" margin="0 0 2.5rem 0" type="submit">
           რეგისტრაცია
         </Button>
+
         <SAuthenticationText>
           უკვე გაქვს ანგარიში?
           <SAuthenticationLink to="/authentication">

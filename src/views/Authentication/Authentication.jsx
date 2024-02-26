@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Header } from "../../components/Headers/Header";
 import { Input } from "../../components/Inputs/Input";
 import { PasswordInput } from "../../components/Inputs/PasswordInput";
 import { Checkbox } from "../../components/Inputs/Checkbox/Checkbox";
@@ -15,22 +14,22 @@ import {
   SRememberWrapper,
   SError,
   STitle,
-  SAuthenticationSvgs,
-  SVectorSvg,
-  StarTopSvg,
-  StarBottomSvg,
 } from "./Authentication.styled";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { authenticationSchema } from "../../schemas/authentication";
+import Cookies from "js-cookie";
+
+const url = "https://unispaceapi.onrender.com/api/authorization";
 
 export const Authentication = () => {
   const {
     register,
     watch,
     formState: { errors },
+    getValues,
     handleSubmit,
   } = useForm({
     resolver: zodResolver(authenticationSchema),
@@ -42,30 +41,30 @@ export const Authentication = () => {
 
   const navigate = useNavigate();
 
-  const onSubmit = (data) => {
-    delete data.remember; // We will need this later for keeping the user logged in
-
-    axios
-      .post("http://127.0.0.1:5000/Authorization", data, {
+  const onSubmit = async () => {
+    try {
+      const res = await axios.post(url, getValues(), {
         headers: {
           "Content-Type": "application/json",
         },
-      })
-      .then((res) => {
-        if (res.statusText !== "OK") return;
-        navigate("/");
-      })
-      .catch((err) => {
-        if (!err.response.data) return console.log(err);
-
-        console.log(err.response.data);
-        setServerErrors(err.response.data);
       });
+
+      if (res.status !== 200) return;
+      const { access_token, refresh_token } = res.data;
+
+      Cookies.set("access_token", access_token, { expires: 1 });
+      Cookies.set("refresh_token", refresh_token, { expires: 30 });
+      navigate("/");
+    } catch (err) {
+      if (!err.response.data) return console.log(err);
+
+      console.log(err.response.data);
+      setServerErrors(err.response.data);
+    }
   };
 
   return (
     <SAuthenticationView>
-      <Header />
       <SForm onSubmit={handleSubmit(onSubmit)}>
         <STitle>გამარჯობა</STitle>
         <SDescription>
@@ -113,11 +112,6 @@ export const Authentication = () => {
           </SRegistrationLink>
         </SRegistrationText>
       </SForm>
-      <SAuthenticationSvgs>
-        <SVectorSvg src="assets/svg/vector.svg" alt="vector" />
-        <StarTopSvg src="assets/svg/starTop.svg" alt="starTop" />
-        <StarBottomSvg src="assets/svg/starBottom.svg" alt="starTop" />
-      </SAuthenticationSvgs>
     </SAuthenticationView>
   );
 };

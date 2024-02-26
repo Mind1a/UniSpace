@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { FourthHeader } from "../../components/Headers/FourthHeader";
-import { SideBar } from "../../components/SideBar";
-import { Footer } from "../../components/Footer";
 import {
   SEditCourseMainDiv,
   SCourseTitle,
@@ -36,7 +33,6 @@ export const EditCourse = () => {
 
   return (
     <SEditCourseMainDiv>
-      <FourthHeader />
       <SCourseTitle>სწავლების დამატება/რედაქტირება</SCourseTitle>
       <SContainer>
         <SGridContainer>
@@ -120,10 +116,6 @@ export const EditCourse = () => {
           დამატება
         </Button>
       </SButtonContainer>
-      <section>
-        <SideBar />
-      </section>
-      <Footer />
     </SEditCourseMainDiv>
   );
 };

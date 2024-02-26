@@ -10,18 +10,20 @@ import { EditCourse } from "./views/EditCourse";
 import { AboutProject } from "./views/AboutProject";
 import { Directions } from "./views/Directions";
 import { AddQuestions } from "./views/AddQuestions";
+import { AnswerQuestions } from "./views/AnswerQuestions";
 import { Portfolio } from "./views/Portfolio";
 import { ProjectPage } from "./views/ProjectPage";
 import { UploadProject } from "./views/UploadProject";
 import { UploadProjectAdmin } from "./views/UploadProjectAdmin";
 import dayjs from "dayjs";
 import "dayjs/locale/ka";
+import { Layout } from "./components/Layout";
 
 dayjs.locale("ka");
 
 const App = () => {
   return (
-    <div>
+    <Layout>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/authentication" element={<Authentication />} />
@@ -33,12 +35,13 @@ const App = () => {
         <Route path="/about-project" element={<AboutProject />} />
         <Route path="/directions" element={<Directions />} />
         <Route path="/add-questions" element={<AddQuestions />} />
+        <Route path="/answer-questions" element={<AnswerQuestions />} />
         <Route path="/upload-project" element={<UploadProject />} />
         <Route path="/upload-project-admin" element={<UploadProjectAdmin />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/project" element={<ProjectPage />} />
       </Routes>
-    </div>
+    </Layout>
   );
 };
 

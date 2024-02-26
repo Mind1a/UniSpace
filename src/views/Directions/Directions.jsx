@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { authenticationSchema } from "../../schemas/authentication";
-import { FourthHeader } from "../../components/Headers/FourthHeader";
-import { SideBar } from "../../components/SideBar";
 import { Input } from "../../components/Inputs/Input";
 
 import {
@@ -13,18 +11,14 @@ import {
   SInputForm,
   STitle,
   SButtons,
-  SBackground,
 } from "./Directions.styled";
 import { Dropdown } from "../../components/Inputs/Dropdown";
-import { items } from "./SidebarItems";
 import { SingleUploader } from "../../components/Buttons/SingleUploader";
 import { SUploaderContainer } from "../../components/Buttons/SingleUploader/SingleUploader.styled";
 import { Button } from "../../components/Button";
-import { BackgroundStar } from "./BackgroundSvg/BackgroundStar";
 import { SAdditionalResources } from "../../components/Buttons/AdditionalResources/AdditionaResources.styled";
 import { AdditionalResources } from "../../components/Buttons/AdditionalResources";
 import { AnotherDirection } from "../../components/Buttons/AnotherDirection";
-import { Footer } from "../../components/Footer";
 import { LeftArrowSvg } from "../../components/Buttons/AdditionalResources/IconSvg/LeftArrowSvg";
 
 export const Directions = () => {
@@ -42,8 +36,6 @@ export const Directions = () => {
 
   return (
     <SDirectionsMainDiv>
-      <FourthHeader />
-      <SideBar items={items} />
       <SDirectionsWrapper>
         <STitle>მიმართულების დამატება/რედაქტირება</STitle>
         <SInputForm>
@@ -72,7 +64,10 @@ export const Directions = () => {
         <SUploaderContainer>
           <SingleUploader title="კურსის სილაბუსი" name="ატვირთე სილაბუსი" />
           <SingleUploader title="სტაჟირების სილაბუსი" name="ატვირთე სილაბუსი" />
-          <SingleUploader title="სცადე,ისწავლე ასწავლე" name="ატვირთე სილაბუსი" />
+          <SingleUploader
+            title="სცადე,ისწავლე ასწავლე"
+            name="ატვირთე სილაბუსი"
+          />
           <SingleUploader title="უნილაბი სკოლაში" name="ატვირთე სილაბუსი" />
         </SUploaderContainer>
 
@@ -114,12 +109,6 @@ export const Directions = () => {
           დამატება
         </Button>
       </SButtons>
-
-      <SBackground>
-        <BackgroundStar />
-      </SBackground>
-
-      <Footer />
     </SDirectionsMainDiv>
   );
 };

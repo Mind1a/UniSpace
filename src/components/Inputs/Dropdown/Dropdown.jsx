@@ -15,7 +15,7 @@ import { AnimatePresence } from "framer-motion";
 import { useController } from "react-hook-form";
 
 export const Dropdown = (props) => {
-  const { name, gridArea, items, control } = props;
+  const { name, gridArea, items, control, isTextValue } = props;
 
   const {
     field: { value, onChange, onBlur },
@@ -30,16 +30,21 @@ export const Dropdown = (props) => {
     setIsOpen(!isOpen);
   };
 
-  const handleSelect = (id) => {
+  const handleSelect = (val) => {
     toggleOpen();
-    onChange(id);
+    onChange(val)
+  };
+
+  const getValue = (value) => {
+    if (isTextValue) return value;
+    return items[+value];
   };
 
   return (
     <SDropdownWrapper gridArea={gridArea} ref={dropdownRef}>
       <Input
         {...props}
-        value={items && items[value]}
+        value={getValue(value)}
         readOnly
         type={"text"}
         onClick={toggleOpen}
@@ -66,7 +71,10 @@ export const Dropdown = (props) => {
                   <SDropdownItem key={id}>
                     <SDropdownButton
                       type="button"
-                      onClick={() => handleSelect(id)}
+                      onClick={() => {
+                        if (isTextValue) return handleSelect(value);
+                        handleSelect(id);
+                      }}
                       data-longestitem={longestItem}
                     >
                       {value}

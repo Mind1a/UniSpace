@@ -1,13 +1,10 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 
 export const SAuthenticationView = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 100%;
-  height: 100vh;
   position: relative;
   color: white;
 `;

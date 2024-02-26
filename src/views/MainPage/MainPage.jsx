@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { ThirdHeader } from "../../components/Headers/ThirdHeader";
 import { ProjectSlider } from "../../components/ProjectSlider";
-import { Footer } from "../../components/Footer";
 import { Button } from "../../components/Button";
 import { motion } from "framer-motion";
 
@@ -9,11 +7,7 @@ import {
   SDescription,
   SMainContent,
   SMainDiv,
-  SMainPageSvgs,
-  SStarLeftTop,
-  SStarRight,
   STitle,
-  SVectorBottom,
 } from "./MainPage.styled";
 import { ProjectData } from "../../data";
 import { Link } from "react-router-dom";
@@ -31,7 +25,6 @@ export const MainPage = () => {
   const { title, description } = ProjectData[sliderIndex];
   return (
     <SMainDiv>
-      <ThirdHeader />
       <ProjectSlider onChange={handleSliderChange} data={ProjectData} />
       <SMainContent initial="hidden" animate="visible">
         <STitle key={"title" + sliderIndex} variants={titleVariants}>
@@ -47,18 +40,6 @@ export const MainPage = () => {
           <Button width="21.25rem">ვრცლად პროექტის შესახებ</Button>
         </MotionLink>
       </SMainContent>
-      <SMainPageSvgs>
-        <SStarLeftTop src="assets/svg/MainPagestar2.svg" alt="StarLeftBottom" />
-        <SStarRight src="assets/svg/MainPagestar1.svg" alt="StarLeftTop" />
-        <SVectorBottom
-          src="assets/svg/MainPageGroup.svg"
-          alt="VectorRight"
-          layout
-        />
-      </SMainPageSvgs>
-      <motion.div layout>
-        <Footer />
-      </motion.div>
     </SMainDiv>
   );
 };

@@ -7,11 +7,9 @@ import {
   SAddQuestionsMainDiv,
   STitle,
   SAddQuestionsContainer,
-  SInfoText
+  SInfoText,
 } from "./AddQuestions.styled";
-import { FourthHeader } from "../../components/Headers/FourthHeader";
 import { useForm, useFieldArray } from "react-hook-form";
-import { SideBar } from "../../components/SideBar";
 
 const arrayOfAnswers = (type) => {
   const numOfQuestions =
@@ -195,7 +193,7 @@ export const AddQuestions = () => {
       handleVerbalChange,
       handleTextBoxAnswerChange,
       handleMaxRatingValueChange,
-      };
+    };
   };
 
   const displayForm = (item, index) => {
@@ -215,8 +213,6 @@ export const AddQuestions = () => {
   };
   return (
     <SAddQuestionsMainDiv>
-      <FourthHeader />
-      <SideBar />
       <STitle>კითხვების შედგენა</STitle>
       {fields.length === 0 && (
         <SInfoText>

@@ -4,8 +4,6 @@ export const SRecoveryPasswordView = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 100%;
-  height: 100vh;
   position: relative;
   color: white;
 `;

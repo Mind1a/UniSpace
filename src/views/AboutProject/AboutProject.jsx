@@ -4,20 +4,12 @@ import {
   SAboutProject,
   STitle,
   SAboutSection,
-  SAboutLine,
-  SAboutSvg,
-  StarMiddleSvg,
 } from "./AboutProject.styled";
-import { FourthHeader } from "../../components/Headers/FourthHeader";
-import { Footer } from "../../components/Footer";
-import { ContributorsSlider } from "../../components/ContributorsSlider";
 
 export const AboutProject = () => {
   return (
     <SAboutProjectView>
-      <FourthHeader />
       <SAboutProject>
-        <img src="assets/svg/starTop.svg" alt="" />
         <STitle>პროექტის შესახებ</STitle>
         <SAboutSection>
           <ul>
@@ -52,18 +44,12 @@ export const AboutProject = () => {
             </li>
           </ul>
         </SAboutSection>
-        <SAboutLine>
+        {/* <SAboutLine>
           <img src="/assets/svg/lineLeft.svg" alt="lineLeft" />
-        </SAboutLine>
+        </SAboutLine> */}
         <span>პროექტზე მუშაობდნენ</span>
-        <ContributorsSlider />
+        {/* <ContributorsSlider /> */}
       </SAboutProject>
-
-      <SAboutSvg>
-        <StarMiddleSvg src="assets/svg/starMiddleRight.svg" alt="starMiddle" />
-      </SAboutSvg>
-      
-      <Footer />
     </SAboutProjectView>
   );
 };

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const SPrivacyPolicyView = styled.div`
@@ -33,7 +32,6 @@ export const SPreRegistrationSection = styled.section`
       margin: 0rem 5rem;
       max-width: 80rem;
       font-size: 1rem;
-      weight: 400;
       margin-bottom: 1.875rem;
     }
   }

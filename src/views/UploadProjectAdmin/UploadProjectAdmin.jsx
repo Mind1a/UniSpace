@@ -15,8 +15,6 @@ import {
   SPersonImg,
   SContainer,
 } from "./UploadProjectAdmin.styled";
-import { FourthHeader } from "../../components/Headers/FourthHeader";
-import { SideBar } from "../../components/SideBar";
 import { Input } from "../../components/Inputs/Input";
 import { Textarea } from "../../components/Inputs/Textarea";
 import { Button } from "../../components/Button";
@@ -24,7 +22,6 @@ import { RadioDropdown } from "../../components/Inputs/RadioDropdown/RadioDropdo
 import { Uploader } from "../../components/Uploader";
 import { SingleUploader } from "../../components/Buttons/SingleUploader/SingleUploader";
 import { LinkUploader } from "../../components/Inputs/LinkUploader";
-import { Star } from "../../components/Star";
 import defaultProfilePicture from "/assets/svg/defaultUser.svg";
 import axios from "axios";
 
@@ -107,7 +104,7 @@ export const UploadProjectAdmin = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "https://jsonplaceholder.typicode.com/users"
+        "https://jsonplaceholder.typicode.com/users",
       );
       setNameData(response.data);
     } catch (error) {
@@ -132,11 +129,6 @@ export const UploadProjectAdmin = () => {
 
   return (
     <SUploadProjectMainDiv>
-      <FourthHeader />
-      <Star number={1} top={"33.75rem"} left={"90%"} />
-      <Star number={5} top={"55rem"} left={"60%"} />
-      <Star number={4} top={"160rem"} left={"20%"} />
-      <SideBar />
       <SContentWrapper onSubmit={handleSubmit(onSubmit)}>
         <STitle>პროექტის ატვირთვა</STitle>
         <SInputWrapper>

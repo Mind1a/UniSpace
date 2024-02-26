@@ -3,14 +3,10 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { authenticationSchema } from "../../schemas/authentication";
 
-import { FourthHeader } from "../../components/Headers/FourthHeader";
-import { SideBar } from "../../components/SideBar";
 import { Input } from "../../components/Inputs/Input";
 import { Uploader } from "../../components/Uploader/Uploader";
-import { items } from "../Directions/SidebarItems";
 import {
   SUploadProjectMainDiv,
-  SBackgroundSvg,
   SButtonsWrapper,
   SContentWrapper,
   SInputWrapper,
@@ -19,9 +15,7 @@ import {
 } from "./UploadProject.styled";
 import { Textarea } from "../../components/Inputs/Textarea";
 import { Button } from "../../components/Button";
-import { Footer } from "../../components/Footer";
 import { SLabel } from "../../components/Inputs/Input/Input.styled";
-import backgroundCircleSvg from "/assets/svg/backgroundcircle.svg";
 
 const LinkAndLineComponent = () => {
   return (
@@ -46,9 +40,6 @@ export const UploadProject = () => {
   });
   return (
     <SUploadProjectMainDiv>
-      <SBackgroundSvg src={backgroundCircleSvg} />
-      <FourthHeader />
-      <SideBar items={items} />
       <SContentWrapper>
         <STitle>პროექტის ატვირთვა</STitle>
         <SInputWrapper>
@@ -95,7 +86,6 @@ export const UploadProject = () => {
           <Button width="14.875rem">შენახვა</Button>
         </SButtonsWrapper>
       </SContentWrapper>
-      <Footer />
     </SUploadProjectMainDiv>
   );
 };
