@@ -5,6 +5,7 @@ import {
   STitle,
   SAboutSection,
 } from "./AboutProject.styled";
+import { ContributorsSlider } from "../../components/ContributorsSlider/ContributorsSlider";
 
 export const AboutProject = () => {
   return (
@@ -48,7 +49,7 @@ export const AboutProject = () => {
           <img src="/assets/svg/lineLeft.svg" alt="lineLeft" />
         </SAboutLine> */}
         <span>პროექტზე მუშაობდნენ</span>
-        {/* <ContributorsSlider /> */}
+        <ContributorsSlider />
       </SAboutProject>
     </SAboutProjectView>
   );

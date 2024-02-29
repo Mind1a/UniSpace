@@ -6,7 +6,7 @@ export const SContributorsSlider = styled.div`
   }
   margin: 8.938rem auto;
 
-  width: 95vw;
+  width: 100%;
   > span {
     font-size: 1.125rem;
     color: #ffffff;
