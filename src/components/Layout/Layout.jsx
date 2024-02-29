@@ -41,6 +41,12 @@ export const Layout = ({ children }) => {
     "/project",
   ];
 
+  const noFooterPathnames = [
+    "/authentication",
+    "/recovery-password",
+    "/registration"
+  ]
+
   return (
     <SContainer>
       <SHeader>
@@ -59,21 +65,24 @@ export const Layout = ({ children }) => {
         </SSideBar>
       )}
 
-      <SFooter>
-        <SFooterLines>
-          <div>
-            <span className="line" />
-            <span className="circle" />
+      {!noFooterPathnames.includes(pathname) && (
+        <SFooter>
+          <SFooterLines>
+            <div>
+              <span className="line" />
+              <span className="circle" />
+            </div>
+            <div>
+              <span className="circle" />
+              <span className="line" />
+            </div>
+          </SFooterLines>
+          <div className="footer">
+            <Footer />
           </div>
-          <div>
-            <span className="circle" />
-            <span className="line" />
-          </div>
-        </SFooterLines>
-        <div className="footer">
-          <Footer />
-        </div>
-      </SFooter>
+        </SFooter>
+      )}
+
       <Background />
     </SContainer>
   );
