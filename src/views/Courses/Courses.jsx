@@ -12,11 +12,11 @@ export const Courses = () => {
     <>
       <SCoursesContainer>
         <SCoursesH1>აქტიური კონკურსები</SCoursesH1>
-        <CourseSlider data={CoursesData} />
+        <CourseSlider data={CoursesData} buttonContent="რეგისტრაცია" />
       </SCoursesContainer>
       <SCoursesContainer>
         <SCoursesH1>მიმდინარე კურსები</SCoursesH1>
-        <CourseSlider data={CoursesData} />
+        <CourseSlider data={CoursesData} buttonContent="დეტალურად" />
       </SCoursesContainer>
     </>
   )

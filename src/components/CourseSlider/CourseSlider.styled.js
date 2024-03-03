@@ -39,17 +39,17 @@ export const SCourseImgContainer = styled.div`
 
 export const SVectorTopLeft = styled.div`
   position: absolute;
-  top: 0;
-  left: -1.406rem;
+  top: ${({ top }) => (top ? top : 0)};
+  left: ${({ left }) => (left ? left : "-2rem")};
 `;
 
 export const SVectorBottomRight = styled.div`
   position: absolute;
-  bottom: 0;
-  right: -1.406rem;
+  bottom: ${({ bottom }) => (bottom ? bottom : 0)};;
+  right: ${({ right }) => (right ? right : "-2rem")};
 `;
 export const SCourseFullname = styled.div`
-  margin-top: 4rem;
+  margin-top: 3rem;
   > span {
     font-family: 'Noto Sans Georgian';
     font-size: 1.375rem;

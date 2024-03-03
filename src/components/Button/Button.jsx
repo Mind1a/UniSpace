@@ -9,6 +9,10 @@ export const Button = ({
   margin,
   fontSize,
   fontWeight,
+  border,
+  borderHover,
+  bgColor,
+  borderRadius,
   LeftComponent,
   RightComponent,
   children,
@@ -23,6 +27,10 @@ export const Button = ({
       fontWeight={fontWeight}
       type={type}
       secondary={secondary}
+      border={border}
+      borderHover={borderHover}
+      borderRadius={borderRadius}
+      bgColor={bgColor}
       onClick={onClick}
     >
       <SContentWrapper>
