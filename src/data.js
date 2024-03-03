@@ -32,6 +32,39 @@ export const ProjectData = [
   },
 ];
 
+export const CoursesData = [
+  {
+    id: 1,
+    course: "Front - End",
+    src: "assets/images/course_frontend.png"
+  },
+  {
+    id: 2,
+    course: "გრაფიკული დიზაინი",
+    src: "assets/images/course_design.png"
+  },
+  {
+    id: 3,
+    course: "ICT პროექტების მართვა",
+    src: "assets/images/course_ICT.png"
+  },
+  {
+    id: 4,
+    course: "Front - End",
+    src: "assets/images/course_frontend.png"
+  },
+  {
+    id: 5,
+    course: "გრაფიკული დიზაინი",
+    src: "assets/images/course_design.png"
+  },
+  {
+    id: 6,
+    course: "ICT პროექტების მართვა",
+    src: "assets/images/course_ICT.png"
+  },
+]
+
 export const ContributorsData = [
   {
     id: 1,
