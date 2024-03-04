@@ -18,6 +18,7 @@ import { UploadProjectAdmin } from "./views/UploadProjectAdmin";
 import dayjs from "dayjs";
 import "dayjs/locale/ka";
 import { Layout } from "./components/Layout";
+import { MyProjects } from "./views/MyProjects";
 
 dayjs.locale("ka");
 
@@ -40,6 +41,7 @@ const App = () => {
         <Route path="/upload-project-admin" element={<UploadProjectAdmin />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/project" element={<ProjectPage />} />
+        <Route path="/my-projects" element={<MyProjects />} />
       </Routes>
     </Layout>
   );
