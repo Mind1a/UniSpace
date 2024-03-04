@@ -17,10 +17,10 @@ const BaseArrowButton = styled.button`
 `;
 
 export const SLeftArrowButton = styled(BaseArrowButton)`
-  right: 13rem;
+  right: ${({ right }) => (right ? right : "13rem")};
 
   @media (min-width: 1024px) {
-    right: 13rem;
+    right: ${({ right }) => (right ? right : "13rem")};
   }
 
   @media (max-width: 768px) {
@@ -29,10 +29,10 @@ export const SLeftArrowButton = styled(BaseArrowButton)`
 `;
 
 export const SRightArrowButton = styled(BaseArrowButton)`
-  right: 8rem;
+  right: ${({ right }) => (right ? right : "8rem")};
 
   @media (min-width: 1024px) {
-    right: 8rem;
+    right: ${({ right }) => (right ? right : "8rem")};
   }
 
   @media (max-width: 768px) {
