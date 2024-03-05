@@ -1,5 +1,7 @@
 import { MyProject } from "./MyProject";
 import { SMyProjects } from "./MyProjects.styled";
+import { FilterIcon } from "./assets/filter-icon";
+import { HamburgerIcon } from "./assets/hamburger-icon";
 
 const mockData = [
   {
@@ -58,10 +60,14 @@ const mockData = [
 export const MyProjects = () => {
   return (
     <SMyProjects>
-      <h2>ჩემი პროექტები</h2>
-      <div>
-        <button>globalFilter</button>
-        <button>filter</button>
+      <h2>პროექტები</h2>
+      <div className="filters">
+        <button className="global">
+          <HamburgerIcon />
+        </button>
+        <button className="local">
+          <FilterIcon />
+        </button>
       </div>
 
       <div>

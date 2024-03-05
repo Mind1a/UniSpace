@@ -1,11 +1,43 @@
 import styled from "styled-components";
 
 export const SMyProjects = styled.div`
+  font-family: "Noto Sans Georgian";
   color: #fff;
+  h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+
+  .filters {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.4rem;
+
+    button {
+      border-radius: 0.3rem;
+      border: none;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+
+      svg {
+        width: 1.4rem;
+        height: 1.4rem;
+      }
+    }
+
+    .local {
+      background-color: #4980c0;
+    }
+  }
 `;
 
 export const SMyProject = styled.div`
-  font-family: "Noto Sans Georgian";
   padding: 4rem 0;
 
   &:not(:last-of-type) {
