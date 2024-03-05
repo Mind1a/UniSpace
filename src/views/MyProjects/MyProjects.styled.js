@@ -41,7 +41,8 @@ export const SMyProject = styled.div`
   padding: 4rem 0;
 
   &:not(:last-of-type) {
-    border-bottom: 2px dashed #3f48cc;
+    border-bottom: 2px solid transparent;
+    border-image: url("/src/views/MyProjects/assets/border-line.svg") 2;
   }
 
   .info {
@@ -129,11 +130,16 @@ export const SMyProject = styled.div`
 
 export const SProjectImage = styled.div`
   position: relative;
-  width: 210px;
   height: 260px;
+  aspect-ratio: 3/4;
   display: grid;
   place-items: center;
-  background: url("/src/views/MyProjects/assets/Frame.png") center / cover
-    no-repeat;
-  padding: 1rem;
+  border: 20px solid transparent;
+  border-image: url("/src/views/MyProjects/assets/frame.svg") 20;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 `;
