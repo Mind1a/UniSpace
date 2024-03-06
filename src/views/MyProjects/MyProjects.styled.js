@@ -7,7 +7,7 @@ export const SMyProjects = styled.div`
     text-align: center;
     font-size: 1.8rem;
     font-weight: 400;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
   }
 
   .filters {
