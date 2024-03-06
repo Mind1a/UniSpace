@@ -136,9 +136,9 @@ export const SProjectImage = styled.div`
   place-items: center;
   border: 20px solid transparent;
   border-image: url("/src/views/MyProjects/assets/frame.svg") 20;
+  overflow: hidden;
 
   img {
-    width: 100%;
     height: 100%;
     object-fit: cover;
   }
