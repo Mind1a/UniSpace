@@ -12,41 +12,44 @@ export const SCourseSlider = styled.div`
 
 export const SCourseCard = styled.div`
   position: relative;
-  display: flex;
-  text-align: center;
 `;
 
 export const SCourseInfo = styled.div`
   > span {
     margin-top: 4.938rem;
   }
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+`;
+
+export const SCourseImgContainer = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
-  position: relative;
+  padding: 1.406rem 0;
+  width: 100%;
+  overflow: hidden;
 `;
 
 export const SCourseImg = styled.img`
-  min-width: 10rem;
   height: 10rem;
   margin: 3rem 2rem;
   pointer-events: none;
 `;
 
-export const SCourseImgContainer = styled.div`
-  position: relative;
-  padding: 1.406rem 0;
-`;
-
 export const SVectorTopLeft = styled.div`
   position: absolute;
   top: ${({ top }) => (top ? top : 0)};
-  left: ${({ left }) => (left ? left : "-2rem")};
+  left: ${({ left }) => (left ? left : "0rem")};
 `;
 
 export const SVectorBottomRight = styled.div`
   position: absolute;
   bottom: ${({ bottom }) => (bottom ? bottom : 0)};;
-  right: ${({ right }) => (right ? right : "-2rem")};
+  right: ${({ right }) => (right ? right : "0rem")};
 `;
 export const SCourseFullname = styled.div`
   margin-top: 3rem;
