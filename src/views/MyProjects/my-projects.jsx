@@ -1,6 +1,5 @@
-import { MyProject } from "./MyProject";
-import { SMyProjects } from "./MyProjects.styled";
-import { FilterIcon } from "./assets/filter-icon";
+import { MyProject } from "./my-project";
+import { SMyProjects } from "./my-projects.styled";
 import { HamburgerIcon } from "./assets/hamburger-icon";
 import { ProjectFilter } from "./project-filter";
 
@@ -63,10 +62,6 @@ export const MyProjects = () => {
     <SMyProjects>
       <h2>პროექტები</h2>
       <div className="filters">
-        <button className="global">
-          <HamburgerIcon />
-        </button>
-
         <ProjectFilter />
       </div>
 

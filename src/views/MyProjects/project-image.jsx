@@ -1,6 +1,6 @@
 import ProjectImagePlaceholder from "./assets/project-image-placeholder.png";
 
-import { SProjectImage } from "./MyProjects.styled";
+import { SProjectImage } from "./my-projects.styled";
 
 export const ProjectImage = ({ image }) => {
   return (

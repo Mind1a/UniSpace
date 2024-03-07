@@ -1,6 +1,6 @@
 import { ProjectImage } from "./project-image";
 
-import { SMyProject } from "./MyProjects.styled";
+import { SMyProject } from "./my-projects.styled";
 import { ArrowIcon } from "./assets/arrow-icon";
 
 export const MyProject = ({
