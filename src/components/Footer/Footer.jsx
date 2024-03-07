@@ -21,7 +21,7 @@ export const Footer = () => {
           <SAboutProjectContainer href="#">
             <SAboutProject>პროექტის შესახებ</SAboutProject>
           </SAboutProjectContainer>
-          <img src="/assets/images/unilab-logo.png" alt="Unilab logo" />
+          <img src="/assets/images/unilab-logo.svg" alt="Unilab logo" />
         </SAboutProjectDiv>
         <SSocialIcons>
           <a href="#">
