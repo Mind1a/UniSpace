@@ -54,7 +54,7 @@ export const Authentication = () => {
 
       Cookies.set("access_token", access_token, { expires: 1 });
       Cookies.set("refresh_token", refresh_token, { expires: 30 });
-      navigate("/");
+      navigate("/courses");
     } catch (err) {
       if (!err.response.data) return console.log(err);
 

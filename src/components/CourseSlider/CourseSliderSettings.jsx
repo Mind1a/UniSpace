@@ -1,15 +1,14 @@
-import React from 'react'
-import { CustomNextArrow, CustomPrevArrow } from './CustomArrows/CustomArrows';
+import { CustomNextArrow, CustomPrevArrow } from "../ContributorsSlider/CustomArrows/CustomArrows";
 
 export const settings = {
   dots: false,
-  infinite: true,
+  infinite: false,
   speed: 700,
   slidesToShow: 3,
   slidesToScroll: 3,
-  initialSlide: 0,
-  prevArrow: <CustomPrevArrow />,
-  nextArrow: <CustomNextArrow />,
+  focusOnSelect: true,
+  prevArrow: <CustomPrevArrow right="7rem" />,
+  nextArrow: <CustomNextArrow right="2rem" />,
   responsive: [
     {
       breakpoint: 1024,

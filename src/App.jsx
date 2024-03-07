@@ -15,6 +15,7 @@ import { Portfolio } from "./views/Portfolio";
 import { ProjectPage } from "./views/ProjectPage";
 import { UploadProject } from "./views/UploadProject";
 import { UploadProjectAdmin } from "./views/UploadProjectAdmin";
+import { Courses } from "./views/Courses";
 import dayjs from "dayjs";
 import "dayjs/locale/ka";
 import { Layout } from "./components/Layout";
@@ -42,6 +43,7 @@ const App = () => {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/project" element={<ProjectPage />} />
         <Route path="/my-projects" element={<MyProjects />} />
+        <Route path="/courses" element={<Courses />} />
       </Routes>
     </Layout>
   );
