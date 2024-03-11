@@ -21,17 +21,17 @@ export const Footer = () => {
           <SAboutProjectContainer href="#">
             <SAboutProject>პროექტის შესახებ</SAboutProject>
           </SAboutProjectContainer>
-          <img src="/assets/images/unilabText.webp" alt="unilabText" />
+          <img src="/assets/images/unilab-logo.svg" alt="Unilab logo" />
         </SAboutProjectDiv>
         <SSocialIcons>
           <a href="#">
-            <img src="/assets/svg/facebookLogo.svg" alt="facebookLogo" />
+            <img src="/assets/svg/facebookLogo.svg" alt="Facebook" />
           </a>
           <a href="#">
-            <img src="/assets/svg/youtubeLogo.svg" alt="youtubeLogo" />
+            <img src="/assets/svg/youtubeLogo.svg" alt="Youtube" />
           </a>
           <a href="#">
-            <img src="/assets/svg/linkedinLogo.svg" alt="linkedinLogo" />
+            <img src="/assets/svg/linkedinLogo.svg" alt="LinkedIn" />
           </a>
         </SSocialIcons>
       </SFooterInfo>
