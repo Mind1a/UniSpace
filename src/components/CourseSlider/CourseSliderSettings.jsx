@@ -3,10 +3,9 @@ import { CustomNextArrow, CustomPrevArrow } from "../ContributorsSlider/CustomAr
 export const settings = {
   dots: false,
   infinite: false,
-  speed: 700,
   slidesToShow: 3,
   slidesToScroll: 3,
-  focusOnSelect: true,
+  speed: 700,
   prevArrow: <CustomPrevArrow right="7rem" />,
   nextArrow: <CustomNextArrow right="2rem" />,
   responsive: [
@@ -24,6 +23,5 @@ export const settings = {
         slidesToScroll: 1,
       },
     },
-  ],
-
+  ]
 };

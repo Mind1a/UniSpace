@@ -1,7 +1,6 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { settings } from "./CourseSliderSettings";
-import Slider from "react-slick";
 import {
   SCourseCard,
   SCourseFullname,
@@ -14,13 +13,14 @@ import {
 } from "./CourseSlider.styled"
 import { Button } from "../Button";
 import { useNavigate } from "react-router-dom";
+import { InteractiveSlider } from "../InteractiveSlider";
 
 export const CourseSlider = ({ data, buttonContent }) => {
   const navigate = useNavigate();
 
   return (
     <SCourseSlider>
-      <Slider {...settings}>
+      <InteractiveSlider settings={settings}>
         {data.map(({ id, course, src }) => (
           <SCourseCard key={id}>
             <SCourseInfo>
@@ -56,7 +56,7 @@ export const CourseSlider = ({ data, buttonContent }) => {
             </SCourseInfo>
           </SCourseCard>
         ))}
-      </Slider>
+      </InteractiveSlider>
     </SCourseSlider>
   );
 };
